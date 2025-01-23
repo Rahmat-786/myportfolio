@@ -222,17 +222,7 @@
             document.getElementById(tabname).classList.add("active-tab");
         }
     </script>
-<script>
-    const scriptURL = '<https://script.google.com/macros/s/AKfycbwpQcAwSqTSCqcUoRKGd962xxz2h1GgimQAqNAEwV55Vob9n_yojdDQl-gQAgPP8WBOVg/exec>'
-    const form = document.forms['submit-to-google-sheet']
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => console.log('Success!', response))
-        .catch(error => console.error('Error!', error.message))
-    })
-  </script>
+
   
 </body>
 </html>
