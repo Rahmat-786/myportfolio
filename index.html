@@ -6,6 +6,24 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>My Personal Portfolio</title>
     <link rel="stylesheet" href="sty.css">
+	<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxlzBR-ajeB9A9mEuzOcg_5yfP7laDED_AkHHJozBbX9wZfBJR3h-33Vw2gTu2xVwy0/exec'; // Replace this with the URL you copied from Google Apps Script
+
+  const form = document.forms['contactForm']; // Replace submit-to-google-sheet with your form name
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+        // Optionally, you can clear the form, display a success message, etc.
+        form.reset();
+        alert("Your form is submitted successfully")
+      })
+      .catch(error => console.error('Error:', error));
+  });
+</script>
    
 </head>
 <div>
@@ -173,12 +191,12 @@
                 </div>
             </div>
             <div class="contact-right">
-                <form name="submit-to-google-sheet">
-                    <input type="text" name="name" placeholder="your name" required>
-                    <input type="email" name="email" placeholder="your email" required>
-                    <textarea name="message" rows="6" placeholder="your message"></textarea>
-                    <button type="submit" class="btn btn2">Submit</button>
-                </form>
+              <form name="contactForm">
+  <input type="text" name="name" placeholder="your name" required>
+  <input type="email" name="email" placeholder="your email" required>
+  <textarea name="message" rows="6" placeholder="your message"></textarea>
+  <button type="submit" class="btn btn2">Submit</button>
+</form>
             </div>
         </div>
     </div>
