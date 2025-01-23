@@ -6,24 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>My Personal Portfolio</title>
     <link rel="stylesheet" href="sty.css">
-	<script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbzn6I90B_WLKRhQ1VHXU34QgVDP6dqnLT0F8qf3iMT0Pv3FKlpn_t37AYaBmLB3xYhD/exec'; // Replace this with the URL you copied from Google Apps Script
-
-  const form = document.forms['contactForm']; // Replace submit-to-google-sheet with your form name
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Success:', data);
-        // Optionally, you can clear the form, display a success message, etc.
-        form.reset();
-        alert("Your form is submitted successfully")
-      })
-      .catch(error => console.error('Error:', error));
-  });
-</script>
+	
    
 </head>
 <div>
@@ -222,17 +205,24 @@
             document.getElementById(tabname).classList.add("active-tab");
         }
     </script>
-<script>
-    const scriptURL = '<https://script.google.com/macros/s/AKfycbwpQcAwSqTSCqcUoRKGd962xxz2h1GgimQAqNAEwV55Vob9n_yojdDQl-gQAgPP8WBOVg/exec>'
-    const form = document.forms['submit-to-google-sheet']
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => console.log('Success!', response))
-        .catch(error => console.error('Error!', error.message))
-    })
-  </script>
+ <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzn6I90B_WLKRhQ1VHXU34QgVDP6dqnLT0F8qf3iMT0Pv3FKlpn_t37AYaBmLB3xYhD/exec'; // Replace this with the URL you copied from Google Apps Script
+
+  const form = document.forms['contactForm']; // Replace submit-to-google-sheet with your form name
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+        // Optionally, you can clear the form, display a success message, etc.
+        form.reset();
+        alert("Your form is submitted successfully")
+      })
+      .catch(error => console.error('Error:', error));
+  });
+</script>
   
 </body>
 </html>
